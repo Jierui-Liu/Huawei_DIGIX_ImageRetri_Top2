@@ -1,7 +1,8 @@
 # Huawei_Digix_ImgRetri_Top2
 2020 DIGIX GLOBAL AI CHALLENGE - Digital Device Image Retrieval - WEARE队 亚军
 
-分支
+branch
+
 
 ├── main (efficientnet 决赛单模最高)
 
