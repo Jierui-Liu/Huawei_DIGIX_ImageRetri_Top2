@@ -9,7 +9,7 @@ str=$1
 
 array=(${str//// })
 
-
+ 
 
 lenarray=${#array[*]}
 mutation=${array[lenarray-1]}
