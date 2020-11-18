@@ -1,4 +1,4 @@
-# Huawei_Digix_ImgRetri_Top2
+# Huawei_DIGIX_ImgRetri_Top2
 2020 DIGIX GLOBAL AI CHALLENGE - Digital Device Image Retrieval - WEARE队 亚军
 
 # 0. 环境&依赖
