@@ -1,0 +1,53 @@
+# retrieval settings
+
+datasets:
+  # number of images in a batch.
+  batch_size: 32
+
+  # function for stacking images in a batch.
+  collate_fn:
+    name: "CollateFn"  # name of the collate_fn.
+
+  # function for loading images.
+  folder:
+    name: "Folder"  # name of the folder.
+
+
+index:
+  # path of the query set features and gallery set features.
+  query_fea_dir: "/home/LinHonghui/Project/Huawei_DIGIX_ImgRetri/indexing/features/hw1/query"
+  gallery_fea_dir: "/home/LinHonghui/Project/Huawei_DIGIX_ImgRetri/indexing/features/hw1/gallery"
+
+  # name of the features to be loaded. It should be "output feature map" + "_" + "aggregation".
+  # If there are multiple elements in the list, they will be concatenated on the channel-wise.
+  feature_names: ["f1"]
+
+  # a list of dimension process functions.
+  dim_processors:
+    # names: ["L2Normalize", "PCA", "L2Normalize"]
+    # PCA:
+    names: ["L2Normalize"]
+    # names: ["L2Normalize","SVD","L2Normalize"]
+    # SVD:
+    #   proj_dim: 1024  # the dimension after reduction. If it is 0, then no reduction will be done.
+    #   whiten: True  # whether do whiten when using SVD.
+    #   train_fea_dir: "/home/LinHonghui/Project/Huawei_DIGIX_ImgRetri/indexing/features/hw1/gallery"  # path of the features for training SVD.
+    #   l2: True  # whether do l2-normalization on the training features.
+
+  # function for enhancing the quality of features.
+  feature_enhancer:
+    name: "Identity"  # name of the feature enhancer.
+    # name: "DBA"  # name of the feature enhancer.
+
+  # function for calculating the distance between query features and gallery features.
+  metric:
+    name: "KNN"  # name of the metric.
+    # name: "PLDA"  # name of the metric.
+
+  # function for re-ranking the results.
+  re_ranker:
+    # name: "Identity"  # name of the re-ranker.
+    name: "KReciprocal"  # name of the re-ranker.
+
+
+
