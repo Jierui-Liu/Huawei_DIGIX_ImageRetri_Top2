@@ -32,13 +32,12 @@ python setup.py install
 
 ```
 # 训练数据生成
-cd features/utils
-
 root_dir="./data" # 数据集所在目录
 save_dir="./data" 
 patch=640
 
-python features/utils/convert_jpg2npy.py -root_dir $root_dir -save_dir $save_dir -patch $patch
+cd features/utils
+python convert_jpg2npy.py -root_dir $root_dir -save_dir $save_dir -patch $patch
 ```
 
 
