@@ -74,5 +74,5 @@ python convert_jpg2npy.py -root_dir $root_dir -save_dir $save_dir -patch $patch
 
 
 # 3. 算法说明
-[Coming soon](https://www.zhihu.com/people/lin-hong-hui-81/posts)
+详细方案请见 [zhihu](https://zhuanlan.zhihu.com/p/303371522)
 
