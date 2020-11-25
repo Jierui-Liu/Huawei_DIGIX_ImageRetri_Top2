@@ -3,7 +3,7 @@ Author      : now more
 Contact     : lin.honghui@qq.com
 LastEditors: Please set LastEditors
 Description : 
-LastEditTime: 2020-09-13 09:26:19
+LastEditTime: 2020-11-25 09:25:30
 '''
 import torch
 import torch.nn as nn
@@ -51,7 +51,7 @@ class CosFace_Dropout(nn.Module):
 
 
     def forward(self, input, targets):
-        cosine = self.dropout(F.linear(F.normalize(input), F.normalize(self.weight)))
+        cosine = F.linear(self.dropout(F.normalize(input)), F.normalize(self.weight))
         one_hot = torch.zeros_like(cosine)
         one_hot.scatter_(1, targets.view(-1, 1), 1.0)
 

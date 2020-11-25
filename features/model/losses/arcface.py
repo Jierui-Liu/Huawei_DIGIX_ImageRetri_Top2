@@ -3,7 +3,7 @@
 @Contact     : lin.honghui@qq.com
 LastEditors: Please set LastEditors
 @Description : 
-LastEditTime: 2020-09-16 04:05:04
+LastEditTime: 2020-11-25 09:24:17
 '''
 
 
@@ -60,7 +60,7 @@ class ArcfaceLoss_Dropout(nn.Module):
         self.threshold = math.cos(math.pi - self._m)
         self.mm = math.sin(math.pi - self._m) * self._m
         # get cos(theta)
-        cos_theta = self.dropout(F.linear(F.normalize(features), F.normalize(self.weight)))
+        cos_theta = F.linear(self.dropout(F.normalize(features)), F.normalize(self.weight))
         cos_theta = cos_theta.clamp(-1, 1)  # for numerical stability
 
         target_logit = cos_theta[torch.arange(0, features.size(0)), targets].view(-1, 1)
