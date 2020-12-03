@@ -2,7 +2,7 @@
 Author      : now more
 Contact     : lin.honghui@qq.com
 LastEditors: Please set LastEditors
-LastEditTime: 2020-09-25 13:32:29
+LastEditTime: 2020-12-03 11:05:54
 Description : 
 '''
 
@@ -116,7 +116,7 @@ def hflip(sample):
         raise TypeError("sample['image'] should be np.ndarray image. Got {}".format(type(image)))
     if image.ndim == 2:
         image = image[:,:,None]
-    image = cv.flip(image,1)
+
     if image.shape[2] == 1:
         image = cv.flip(image,1)[:,:,np.newaxis] #keep image.shape = H x W x 1
     else:
@@ -141,7 +141,7 @@ def vflip(sample):
 
     if image.ndim == 2:
         image = image[:,:,None]
-    image = cv.flip(image,0)
+
     if image.shape[2] == 1:
         image = cv.flip(image,0)[:,:,np.newaxis] #keep image.shape = H x W x 1
     else:
